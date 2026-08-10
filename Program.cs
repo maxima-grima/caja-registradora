@@ -1,1 +1,12 @@
-﻿Console.WriteLine("Hello, World!");
+﻿const string CommerceName = "Maxikiosco";
+Console.WriteLine ($"Bienvenido al {CommerceName}");
+Console.Write ("Nombre del cajero: ");
+string cashiername = Console.ReadLine();
+Console.WriteLine($"Bienvenido, {cashiername}. Caja Abierta.");
+Console.ReadLine();
+Console.Write("Ingrese el nombre del producto: ");
+string productName = Console.ReadLine();
+Console.Write("Ingrese el precio del producto: ");
+decimal productPrice = decimal.Parse(Console.ReadLine());
+Console.WriteLine ($"Producto: {productName}, Precio: {productPrice}");
+Console.ReadLine();
