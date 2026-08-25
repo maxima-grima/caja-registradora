@@ -49,11 +49,6 @@ while (saleOpen)
             }
 
             decimal totalConDescuento = subtotal - descuentoPorMonto;
-
-            Console.WriteLine($"Venta cerrada. Total de productos: {productCount}");
-            Console.WriteLine($"Subtotal: {subtotal}");
-            Console.WriteLine($"Descuento: {descuentoPorMonto}");
-            Console.WriteLine($"Total con descuento: {totalConDescuento}");
             decimal descuentoPago = 0;
             decimal recargoPago = 0;
             bool pagoValido = false;
@@ -86,8 +81,45 @@ while (saleOpen)
                         break;
                 }
             }
+            decimal descuentoTotal = descuentoPorMonto + descuentoPago;
+            decimal recargoTotal = recargoPago;
             decimal totalFinal = totalConDescuento - descuentoPago + recargoPago;
-            Console.WriteLine($"Total final a pagar: {totalFinal}");
+
+            Console.WriteLine();
+            int anchoTicket = 30;
+            for (int i = 0; i < anchoTicket; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"     {CommerceName}");
+
+            for (int i = 0; i < anchoTicket; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"Cajero: {cashiername}");
+            Console.WriteLine($"Productos: {productCount}");
+            Console.WriteLine($"Subtotal: {subtotal}");
+            Console.WriteLine($"Descuento: {descuentoTotal}");
+            Console.WriteLine($"Recargo: {recargoTotal}");
+
+            for (int i = 0; i < anchoTicket; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"TOTAL: {totalFinal}");
+
+            for (int i = 0; i < anchoTicket; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
             break;
         default:
             Console.WriteLine("Opción inválida.");
